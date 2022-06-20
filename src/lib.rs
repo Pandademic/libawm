@@ -1,22 +1,5 @@
-//! libawm - power's awm
-//! **NOTE**: in order to use the xcb implementation of penrose, you will need to install the C
-//! libraries that are dependencies (namely xcb, Cairo and Pango).
-//!
-//! [1]: https://dwm.suckless.org/
-//! [2]: https://xmonad.org/
-//! [3]: http://www.qtile.org/
-//! [4]: https://www.rust-lang.org/learn
-//! [5]: https://doc.rust-lang.org/book/
-//! [6]: https://github.com/sminez/penrose/tree/develop/examples
-//! [7]: crate::gen_keybindings
-//! [8]: crate::core::xconnection::XConn
-//! [9]: crate::core::config::Config
-//! [10]: crate::core::manager::WindowManager
-//! [11]: crate::core::hooks
-//! [12]: crate::draw::bar
-//! [13]: https://crates.io/crates/simplelog
-//! [14]: https://xcb.freedesktop.org/
-//! [15]: https://www.rust-lang.org
+// libawm - power's awm
+
 #![warn(
     clippy::complexity,
     clippy::correctness,
@@ -40,7 +23,7 @@ extern crate serde;
 
 #[macro_use]
 pub mod core;
-
+pub mod color;
 pub mod contrib;
 pub mod draw;
 
