@@ -1,1 +1,1 @@
-forked from [penrose](https://github.com/sminez/penrose)
+forked from (penrose)[https://github.com/sminez/penrose]
