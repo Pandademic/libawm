@@ -1,36 +1,24 @@
-.PHONY: audit-dependencies
-audit-dependencies:
+.PHONY: audit-deps
+audit-deps:
 	cargo audit
-
-.PHONY: build
-build:
-	cargo build
-
-.PHONY: build-release
-build-release:
-	cargo lint && cargo build --release
 
 .PHONY: clippy
 clippy:
-	cargo clippy --workspace --all-targets --all-features --examples --tests
+	cargo clippy --workspace --all-targets --all-features --examples
 
-.PHONY: check-all
-check-all:
+.PHONY: check
+check:
 	cargo fmt --all -- --check
-	cargo clippy --workspace --all-targets --all-features --examples --tests
+	cargo clippy --workspace --all-targets --all-features --examples 
 	cargo rustdoc --all-features -- -D warnings
-	cargo test --workspace --all-features
 
 .PHONY: doc
 doc:
 	cargo doc --all-features --open &
 
-.PHONY: examples
-examples:
-	cargo build --examples
-
 .PHONY: format
-format:
+fmt:
+	cargo lint
 	cargo fmt
 
 .PHONY: run-embeded
@@ -51,7 +39,7 @@ upgrade-check:
 
 .PHONY: todo
 todo:
-	rg 'TODO|FIXME|todo!' crates examples src tests
+	rg 'TODO|FIXME|todo!' crates src
 
 
 # GitHub helpers using the official gh GitHub CLI
